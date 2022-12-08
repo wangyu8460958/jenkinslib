@@ -29,7 +29,7 @@ pipeline {
                 timeout(time:5, unit:"MINUTES"){  //步骤超时时间
                     script{  //填写运行代码
                         println('获取代码')
-                        tools.PrintMes("获取代码", 'red')
+                        tools.PrintMes("获取代码", 'green1')
                         println("${test}")
 
                         input id: 'Test', message: '我们是否要继续? ', ok: '是, 继续吧! ', parameters: [choice(choices: ['a', 'b'], description: '', name: 'test1')], submitter: 'lizeyang,admin'
@@ -47,7 +47,7 @@ pipeline {
                         timeout(time:20, unit:"MINUTES"){
                             script{  
                                 println('应用打包')
-                                tools.PrintMes("应用打包", 'blue')
+                                tools.PrintMes("应用打包", 'green1')
                                 mvnHome = tool "m2"
                                 println(mvnHome)
                                 
@@ -64,7 +64,7 @@ pipeline {
                         timeout(time:30, unit:"MINUTES"){
                             script{  
                                 println('代码扫描')
-                                tools.PrintMes("代码扫描", 'green')
+                                tools.PrintMes("代码扫描", 'green1')
                             }
                         }
                     }
