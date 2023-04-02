@@ -9,6 +9,4 @@ def Build(buildType,buildShell){
   
   sh "${buildHome}/bin/${buildType}  ${buildShell}"
   
-  
-  
 }
